@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SchemeSathi | Digital Awareness & Government Schemes Portal</title>
+    <meta name="description" content="Discover Indian government schemes, check eligibility in seconds, verify required documents, and get direct official portal links without middlemen.">
+    <meta name="theme-color" content="#064e3b">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Safety / Official Ticker Banner -->
+    <div class="top-announcement">
+        <div class="container announcement-inner">
+            <span class="announcement-tag"><i class="fa-solid fa-shield-halved"></i> Safety Alert</span>
+            <p class="announcement-text">
+                Government schemes never charge application fees through unauthorized links. Beware of fake APKs and never share your OTP. 
+                National Cyber Crime Helpline: <strong>1930</strong>
+            </p>
+        </div>
+    </div>
+
+    <!-- Header Navigation -->
+    <header class="site-header" id="top">
+        <div class="container nav-container">
+            <a href="#home" class="brand-logo">
+                <div class="logo-icon">
+                    <span class="flag-stripe orange"></span>
+                    <span class="flag-stripe white"><i class="fa-solid fa-dharmachakra chakra-spin"></i></span>
+                    <span class="flag-stripe green"></span>
+                </div>
+                <div class="brand-text">
+                    <span class="brand-name">Scheme<span>Sathi</span></span>
+                    <span class="brand-sub">Digital Scheme Awareness</span>
+                </div>
+            </a>
+
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a>
+                <a href="#eligibility-checker" class="nav-link"><i class="fa-solid fa-wand-magic-sparkles"></i> Eligibility Quiz</a>
+                <a href="#schemes" class="nav-link"><i class="fa-solid fa-layer-group"></i> Schemes</a>
+                <a href="#awareness" class="nav-link"><i class="fa-solid fa-shield-check"></i> Safe Apply Guide</a>
+                <a href="#doc-checklist" class="nav-link"><i class="fa-solid fa-list-check"></i> Doc Checklist</a>
+                <a href="#faqs" class="nav-link"><i class="fa-solid fa-circle-question"></i> FAQs</a>
+            </nav>
+
+            <!-- Header Action Buttons -->
+            <div class="header-actions">
+                <button class="action-btn bookmark-toggle-btn" id="headerBookmarkBtn" title="View Saved Schemes">
+                    <i class="fa-solid fa-bookmark"></i>
+                    <span class="badge" id="bookmarkCount">0</span>
+                </button>
+                <button class="action-btn theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+                <button class="mobile-toggle-btn" id="mobileMenuBtn" aria-label="Open Navigation Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="hero-bg-glow glow-1"></div>
+        <div class="hero-bg-glow glow-2"></div>
+        <div class="container hero-content">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span>
+                <span>Direct Benefit & Welfare Awareness Initiative 🇮🇳</span>
+            </div>
+            <h1 class="hero-title">
+                Discover Government Schemes <br class="hide-mobile">
+                <span class="text-gradient">You Are Actually Entitled To</span>
+            </h1>
+            <p class="hero-subtitle">
+                Access verified national & state welfare programs, understand eligibility criteria in plain language, 
+                verify required documents, and apply directly through genuine official government portals.
+            </p>
+
+            <!-- Hero Action Buttons -->
+            <div class="hero-cta-group">
+                <a href="#schemes" class="btn btn-primary">
+                    <i class="fa-solid fa-compass"></i> Explore All Schemes
+                </a>
+                <a href="#eligibility-checker" class="btn btn-outline">
+                    <i class="fa-solid fa-bolt"></i> Instant Eligibility Checker
+                </a>
+            </div>
+
+            <!-- Quick Search Floating Bar in Hero -->
+            <div class="hero-search-wrapper">
+                <div class="hero-search-box">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                    <input type="text" id="heroSearchInput" placeholder="Try searching 'PM KISAN', 'Health', 'Scholarship', '₹5 Lakh'...">
+                    <button class="btn btn-search" id="heroSearchBtn">Search Schemes</button>
+                </div>
+                <div class="quick-tags">
+                    <span class="quick-tags-label"><i class="fa-solid fa-fire"></i> Popular:</span>
+                    <button class="tag-pill" data-category="Farmers">🌾 Farmers</button>
+                    <button class="tag-pill" data-category="Students">🎓 Students</button>
+                    <button class="tag-pill" data-category="Women">👩 Women & Girls</button>
+                    <button class="tag-pill" data-category="Health">🏥 Healthcare</button>
+                    <button class="tag-pill" data-category="Business">💼 MSME / Loans</button>
+                </div>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="hero-stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">₹5 Lakh</span>
+                        <span class="stat-label">Free Annual Health Cover</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">₹6,000/yr</span>
+                        <span class="stat-label">Direct Farmer Income Support</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-briefcase"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">Up to ₹10L</span>
+                        <span class="stat-label">Mudra Collateral-Free Loans</span>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon"><i class="fa-solid fa-circle-check"></i></div>
+                    <div class="stat-info">
+                        <span class="stat-number">100% Free</span>
+                        <span class="stat-label">Zero Intermediary Fees</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Eligibility Checker Wizard -->
+    <section class="section eligibility-section" id="eligibility-checker">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-badge"><i class="fa-solid fa-wand-magic-sparkles"></i> 30-Second Assistant</span>
+                <h2 class="section-title">Check Which Schemes Match Your Profile</h2>
+                <p class="section-desc">Select your basic background details to immediately filter the most relevant welfare schemes.</p>
+            </div>
+
+            <div class="eligibility-wizard-card">
+                <div class="wizard-grid">
+                    <!-- Profile Field -->
+                    <div class="wizard-field">
+                        <label for="wizardOccupation"><i class="fa-solid fa-user-tie"></i> Who are you?</label>
+                        <select id="wizardOccupation">
+                            <option value="any">Select Your Profile</option>
+                            <option value="Farmers">Farmer / Agricultural Worker</option>
+                            <option value="Students">Student / Youth</option>
+                            <option value="Women">Woman / Mother / Girl Child</option>
+                            <option value="Business">Small Business / Artisan / Vendor</option>
+                            <option value="Health">Family seeking Health Cover</option>
+                            <option value="Social">Senior Citizen / Low Income Family</option>
+                        </select>
+                    </div>
+
+                    <!-- Age Group -->
+                    <div class="wizard-field">
+                        <label for="wizardAge"><i class="fa-solid fa-calendar"></i> Age Group</label>
+                        <select id="wizardAge">
+                            <option value="any">Any Age</option>
+                            <option value="below18">Under 18 years</option>
+                            <option value="18to35">18 - 35 years</option>
+                            <option value="36to59">36 - 59 years</option>
+                            <option value="senior">60+ years (Senior Citizen)</option>
+                        </select>
+                    </div>
+
+                    <!-- Primary Need -->
+                    <div class="wizard-field">
+                        <label for="wizardGoal"><i class="fa-solid fa-bullseye"></i> Primary Need</label>
+                        <select id="wizardGoal">
+                            <option value="any">Show All Benefits</option>
+                            <option value="grant">Direct Cash Transfer / Support</option>
+                            <option value="health">Cashless Hospital Treatment</option>
+                            <option value="education">Scholarship & Education Aid</option>
+                            <option value="loan">Business Loan & Credit</option>
+                            <option value="housing">Housing & Food Security</option>
+                            <option value="pension">Old Age Pension Security</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="wizard-actions">
+                    <button class="btn btn-primary" id="wizardCheckBtn">
+                        <i class="fa-solid fa-filter"></i> Find My Eligible Schemes
+                    </button>
+                    <button class="btn btn-text" id="wizardResetBtn">
+                        <i class="fa-solid fa-arrow-rotate-left"></i> Reset Selection
+                    </button>
+                </div>
+
+                <div class="wizard-result-bar" id="wizardResultBar" style="display: none;">
+                    <span id="wizardResultText">Found 4 matching schemes for your profile!</span>
+                    <a href="#schemes" class="btn btn-sm btn-primary">Jump to Filtered Results <i class="fa-solid fa-arrow-down"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Schemes Directory Section -->
+    <section class="section schemes-section" id="schemes">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-badge"><i class="fa-solid fa-database"></i> Verified Directory</span>
+                <h2 class="section-title">Explore Government Schemes</h2>
+                <p class="section-desc">Search, filter by sector, save bookmarks, and view verified application procedures.</p>
+            </div>
+
+            <!-- Filter Controls Bar -->
+            <div class="filter-controls-wrapper">
+                <div class="search-sort-row">
+                    <div class="search-input-group">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search" placeholder="Search by scheme name, benefits, ministry, or keywords (Press '/' to focus)...">
+                        <button id="clearSearchBtn" class="clear-btn" title="Clear search" aria-label="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div class="sort-bookmark-group">
+                        <div class="select-styled">
+                            <i class="fa-solid fa-arrow-down-wide-short"></i>
+                            <select id="sortBy" aria-label="Sort Schemes">
+                                <option value="default">Sort: Default</option>
+                                <option value="name-asc">Name (A to Z)</option>
+                                <option value="name-desc">Name (Z to A)</option>
+                                <option value="category">By Category</option>
+                            </select>
+                        </div>
+
+                        <button class="btn-filter-pill" id="bookmarkFilterBtn">
+                            <i class="fa-solid fa-bookmark"></i> Saved (<span id="savedCountLabel">0</span>)
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Category Pills Bar -->
+                <div class="category-pills" id="categoryPills">
+                    <button class="cat-pill active" data-category="all">
+                        <i class="fa-solid fa-border-all"></i> All Categories <span class="count" id="count-all">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Farmers">
+                        <i class="fa-solid fa-wheat-awn"></i> Farmers <span class="count" id="count-Farmers">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Students">
+                        <i class="fa-solid fa-graduation-cap"></i> Students <span class="count" id="count-Students">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Women">
+                        <i class="fa-solid fa-person-dress"></i> Women & Child <span class="count" id="count-Women">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Health">
+                        <i class="fa-solid fa-heart-pulse"></i> Healthcare <span class="count" id="count-Health">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Business">
+                        <i class="fa-solid fa-store"></i> MSME & Business <span class="count" id="count-Business">0</span>
+                    </button>
+                    <button class="cat-pill" data-category="Social">
+                        <i class="fa-solid fa-hand-holding-heart"></i> Social Welfare <span class="count" id="count-Social">0</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Status & Summary Counter -->
+            <div class="results-meta-bar">
+                <span class="results-counter" id="resultsCount">Showing all schemes...</span>
+                <span class="active-filters-desc" id="activeFilterDesc"></span>
+                <button class="btn-text btn-reset-filters" id="resetFiltersBtn" style="display: none;">
+                    <i class="fa-solid fa-rotate-left"></i> Reset Filters
+                </button>
+            </div>
+
+            <!-- Scheme Cards Grid -->
+            <div id="schemeList" class="scheme-container" aria-live="polite">
+                <!-- Injected via JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Awareness & Cyber Safety Section -->
+    <section class="section awareness-section" id="awareness">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-badge"><i class="fa-solid fa-shield-halved"></i> Digital Empowerment</span>
+                <h2 class="section-title">Digital Awareness & Safe Application Guide</h2>
+                <p class="section-desc">Equip yourself with the knowledge to apply online safely and protect yourself from fraudulent scams.</p>
+            </div>
+
+            <div class="awareness-tabs-card">
+                <!-- Awareness Navigation Tabs -->
+                <div class="awareness-tab-nav" role="tablist">
+                    <button class="tab-btn active" data-tab="tab-apply"><i class="fa-solid fa-route"></i> 5 Steps to Apply Safely</button>
+                    <button class="tab-btn" data-tab="tab-scams"><i class="fa-solid fa-triangle-exclamation"></i> Fraud & Scam Alerts</button>
+                    <button class="tab-btn" data-tab="tab-portals"><i class="fa-solid fa-globe"></i> Official Portals Directory</button>
+                </div>
+
+                <!-- Tab 1: How to Apply -->
+                <div class="tab-pane active" id="tab-apply">
+                    <div class="steps-timeline">
+                        <div class="timeline-step">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <h4>Verify the Genuine Portal Domain</h4>
+                                <p>Always confirm the web address ends in <strong>.gov.in</strong> or <strong>.nic.in</strong>. Never submit personal identity details on `.com`, `.org`, or third-party blog pages.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <h4>Review Official Eligibility Criteria</h4>
+                                <p>Read age thresholds, annual family income caps, landholding records, and residency rules carefully on the scheme guidelines document before applying.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <h4>Prepare Digital Copies of Required Documents</h4>
+                                <p>Keep Aadhaar linked to your active mobile number (for OTP eKYC), bank account linked to NPCI for DBT (Direct Benefit Transfer), and updated income certificates.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="step-num">4</div>
+                            <div class="step-body">
+                                <h4>Complete the Application Yourself or at CSC</h4>
+                                <p>Fill out the application directly or visit an authorized Common Service Centre (CSC) or Gram Panchayat office. Authorized CSCs charge only fixed nominal government service fees.</p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-step">
+                            <div class="step-num">5</div>
+                            <div class="step-body">
+                                <h4>Save Application Reference Number & Track Online</h4>
+                                <p>Download the acknowledgment slip or take a screenshot of your registration/acknowledgment ID. Use this ID to track approval status on the official portal.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 2: Fraud & Cyber Safety -->
+                <div class="tab-pane" id="tab-scams">
+                    <div class="safety-grid">
+                        <div class="safety-card warning">
+                            <div class="safety-icon"><i class="fa-solid fa-ban"></i></div>
+                            <h4>Never Pay for Free Schemes</h4>
+                            <p>Central and State government welfare registrations (PM-KISAN, Ayushman Bharat, PMAY) are strictly <strong>100% free</strong>. Anyone demanding commissions or upfront bribes for 'guaranteed approval' is committing a crime.</p>
+                        </div>
+
+                        <div class="safety-card danger">
+                            <div class="safety-icon"><i class="fa-solid fa-key"></i></div>
+                            <h4>Never Share OTP or Banking PINs</h4>
+                            <p>Government officials, bank managers, or call centers will <strong>never call asking for your Aadhaar OTP, UPI PIN, or bank passwords</strong>. OTP is only required when you initiate an eKYC transaction yourself.</p>
+                        </div>
+
+                        <div class="safety-card warning">
+                            <div class="safety-icon"><i class="fa-solid fa-mobile-screen"></i></div>
+                            <h4>Beware of WhatsApp & Telegram APKs</h4>
+                            <p>Never install `.apk` files sent over WhatsApp claiming to be "Govt Yojana App" or "Instant PM Money Transfer". These are spyware trojans designed to empty your bank balance.</p>
+                        </div>
+
+                        <div class="safety-card info">
+                            <div class="safety-icon"><i class="fa-solid fa-phone-volume"></i></div>
+                            <h4>Report Cyber Fraud Immediately to 1930</h4>
+                            <p>If you or someone in your family has accidentally transferred money to a scammer or shared banking credentials, dial the National Cyber Crime Helpline <strong>1930</strong> or report on <strong>cybercrime.gov.in</strong> within the golden hour.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab 3: Official Trusted Portals -->
+                <div class="tab-pane" id="tab-portals">
+                    <div class="portals-grid">
+                        <a href="https://www.myscheme.gov.in/" target="_blank" rel="noopener noreferrer" class="portal-card">
+                            <div class="portal-header">
+                                <i class="fa-solid fa-landmark"></i>
+                                <span class="portal-badge">Official Portal</span>
+                            </div>
+                            <h4>myScheme Portal</h4>
+                            <p>National platform by MeitY offering one-stop discovery of 1,000+ government welfare schemes.</p>
+                            <span class="portal-link-text">myscheme.gov.in <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </a>
+
+                        <a href="https://www.digilocker.gov.in/" target="_blank" rel="noopener noreferrer" class="portal-card">
+                            <div class="portal-header">
+                                <i class="fa-solid fa-folder-closed"></i>
+                                <span class="portal-badge">Digital Locker</span>
+                            </div>
+                            <h4>DigiLocker</h4>
+                            <p>Store and fetch authentic digital copies of Aadhaar, Marksheets, Ration Cards & Driving Licenses.</p>
+                            <span class="portal-link-text">digilocker.gov.in <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </a>
+
+                        <a href="https://web.umang.gov.in/" target="_blank" rel="noopener noreferrer" class="portal-card">
+                            <div class="portal-header">
+                                <i class="fa-solid fa-mobile"></i>
+                                <span class="portal-badge">Unified App</span>
+                            </div>
+                            <h4>UMANG Platform</h4>
+                            <p>Unified Mobile Application for New-age Governance accessing EPF, PAN, Scholarships & Pensions.</p>
+                            <span class="portal-link-text">web.umang.gov.in <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </a>
+
+                        <a href="https://cybercrime.gov.in/" target="_blank" rel="noopener noreferrer" class="portal-card">
+                            <div class="portal-header">
+                                <i class="fa-solid fa-user-shield"></i>
+                                <span class="portal-badge">Cyber Protection</span>
+                            </div>
+                            <h4>National Cyber Crime Portal</h4>
+                            <p>Citizen portal for reporting financial cyber fraud, fake portals, and online harassment.</p>
+                            <span class="portal-link-text">cybercrime.gov.in <i class="fa-solid fa-arrow-up-right-from-square"></i></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Document Checklist Section -->
+    <section class="section checklist-section" id="doc-checklist">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-badge"><i class="fa-solid fa-clipboard-check"></i> Readiness Helper</span>
+                <h2 class="section-title">Citizen Document Readiness Tracker</h2>
+                <p class="section-desc">Tick the essential identity & banking credentials you have ready. Most government schemes require these core records.</p>
+            </div>
+
+            <div class="checklist-card">
+                <div class="checklist-header">
+                    <div class="progress-info">
+                        <span class="progress-title">Your Application Readiness Score:</span>
+                        <span class="progress-percent" id="checklistPercentage">0%</span>
+                    </div>
+                    <div class="progress-bar-track">
+                        <div class="progress-bar-fill" id="checklistProgressBar" style="width: 0%;"></div>
+                    </div>
+                    <p class="progress-feedback" id="checklistFeedback">Select the documents you have prepared to see your readiness score.</p>
+                </div>
+
+                <div class="checklist-grid" id="checklistItems">
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="aadhaar-mobile">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Aadhaar Card with Mobile Linked</strong>
+                            <small>Crucial for instant OTP-based eKYC and biometric verification.</small>
+                        </div>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="bank-npci">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Bank Account with NPCI / DBT Mapping</strong>
+                            <small>Enables direct benefit cash transfers into your savings account without delays.</small>
+                        </div>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="income-cert">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Current Income Certificate (Tahsil / Revenue)</strong>
+                            <small>Needed for income-eligibility based welfare & educational scholarships.</small>
+                        </div>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="domicile">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Domicile / Residence Proof Certificate</strong>
+                            <small>Confirms state/union territory citizenship for state-specific quotas.</small>
+                        </div>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="caste-category">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Category / Caste Certificate (SC/ST/OBC/EWS)</strong>
+                            <small>Required if seeking reserved benefits or specialized minority subsidies.</small>
+                        </div>
+                    </label>
+
+                    <label class="check-item">
+                        <input type="checkbox" data-doc="ration-card">
+                        <span class="checkbox-custom"><i class="fa-solid fa-check"></i></span>
+                        <div class="check-text">
+                            <strong>Ration Card (NFSA / BPL / AAY)</strong>
+                            <small>Key proof for subsidized foodgrains, Ayushman Bharat, and housing schemes.</small>
+                        </div>
+                    </label>
+                </div>
+
+                <div class="checklist-footer">
+                    <button class="btn btn-sm btn-outline" id="resetChecklistBtn">
+                        <i class="fa-solid fa-arrow-rotate-left"></i> Reset Checklist
+                    </button>
+                    <span class="save-status"><i class="fa-solid fa-cloud-arrow-up"></i> Saved automatically to your browser</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQs Section -->
+    <section class="section faq-section" id="faqs">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="sub-badge"><i class="fa-solid fa-circle-question"></i> Common Questions</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-desc">Clear answers to common questions about applying for and receiving government benefits.</p>
+            </div>
+
+            <div class="faq-accordion-wrapper">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Are government scheme applications truly 100% free?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes. The Government of India and State Governments do not charge any application or registration fee on official portals like PM-KISAN, Ayushman Bharat, or NSP. If you use a private Cyber Café or CSC (Common Service Centre), they may only charge a small standard government-approved fee (typically ₹20–₹50) for scanning and printing services.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is DBT and how do I ensure my bank receives scheme money?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>DBT stands for <strong>Direct Benefit Transfer</strong>. Money is transferred straight into your Aadhaar-seeded bank account via NPCI (National Payments Corporation of India). To ensure you receive DBT, visit your bank branch and submit the "Aadhaar Seeding and NPCI Mapping Consent Form" or check your status on the official UIDAI portal.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How can I differentiate between a real government site and a fake website?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Official Indian government portals always end with <strong>.gov.in</strong> or <strong>.nic.in</strong> (e.g., <code>https://pmkisan.gov.in</code>). Fake websites usually end in <code>.com</code>, <code>.in</code>, <code>.org</code>, or <code>.xyz</code> and often have sensational headlines like "Get ₹10,000 in your account immediately click here". Never enter your bank or personal data on non-gov websites.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What should I do if my application is rejected or delayed?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>First, log in to the official portal with your registration number and check the rejection remark. Common reasons include spelling mismatch between Aadhaar and bank passbook, or blurred documents. You can update your details online through the correction window or contact the respective scheme helpline or District Welfare Officer.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I apply for more than one scheme simultaneously?</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! As long as you fulfill the individual eligibility criteria for each program, you can simultaneously benefit from health coverage (Ayushman Bharat), farming support (PM-KISAN), business microloans (PM Mudra), and educational scholarships.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency & Official Helplines Strip -->
+    <div class="helpline-strip">
+        <div class="container helpline-inner">
+            <div class="helpline-title">
+                <i class="fa-solid fa-phone-volume"></i>
+                <span>Official National Helplines:</span>
+            </div>
+            <div class="helpline-items">
+                <div class="helpline-badge">
+                    <span class="hl-name">Cyber Crime:</span>
+                    <a href="tel:1930" class="hl-num">1930</a>
+                </div>
+                <div class="helpline-badge">
+                    <span class="hl-name">Ayushman Bharat:</span>
+                    <a href="tel:14555" class="hl-num">14555</a>
+                </div>
+                <div class="helpline-badge">
+                    <span class="hl-name">Kisan Call Center:</span>
+                    <a href="tel:18001801551" class="hl-num">1800-180-1551</a>
+                </div>
+                <div class="helpline-badge">
+                    <span class="hl-name">Women Helpline:</span>
+                    <a href="tel:1091" class="hl-num">1091</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scheme Details Modal Popup -->
+    <div class="modal-overlay" id="schemeModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-card">
+            <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close details dialog">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="modal-header">
+                <div class="modal-badges">
+                    <span class="badge-category" id="modalCategory">Category</span>
+                    <span class="badge-ministry" id="modalMinistry">Ministry</span>
+                </div>
+                <h3 class="modal-title" id="modalTitle">Scheme Name</h3>
+                <p class="modal-subtitle" id="modalHindiName"></p>
+            </div>
+
+            <div class="modal-body">
+                <!-- Highlight Benefit Box -->
+                <div class="modal-benefit-banner">
+                    <i class="fa-solid fa-gift"></i>
+                    <div>
+                        <strong>Key Direct Benefit:</strong>
+                        <span id="modalBenefit">Benefit amount or support</span>
+                    </div>
+                </div>
+
+                <!-- Description -->
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-circle-info"></i> About the Scheme</h4>
+                    <p id="modalDescription"></p>
+                </div>
+
+                <!-- Eligibility -->
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-user-check"></i> Eligibility Criteria</h4>
+                    <p id="modalEligibility"></p>
+                </div>
+
+                <!-- Required Documents -->
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-file-shield"></i> Mandatory Documents</h4>
+                    <div class="doc-tags" id="modalDocuments"></div>
+                </div>
+
+                <!-- Step-by-Step Guide -->
+                <div class="modal-section">
+                    <h4><i class="fa-solid fa-arrow-progress"></i> How to Apply Online</h4>
+                    <ol class="modal-steps-list" id="modalSteps"></ol>
+                </div>
+
+                <!-- Support & Contact -->
+                <div class="modal-support-box">
+                    <i class="fa-solid fa-headset"></i>
+                    <div>
+                        <strong>Official Toll-Free Helpline:</strong>
+                        <span id="modalHelpline">1800-XXX-XXXX</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="btn btn-outline" id="modalShareBtn">
+                    <i class="fa-solid fa-share-nodes"></i> Share Details
+                </button>
+                <a href="#" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="modalOfficialLink">
+                    Visit Official Portal <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div class="toast-container" id="toastContainer" aria-live="polite"></div>
+
+    <!-- Floating Back to Top Button -->
+    <a href="#top" class="back-to-top" id="backToTopBtn" aria-label="Back to Top" title="Back to Top">
+        <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-content">
+            <div class="footer-grid">
+                <!-- Brand Info -->
+                <div class="footer-col brand-col">
+                    <div class="brand-logo footer-logo">
+                        <div class="logo-icon small">
+                            <span class="flag-stripe orange"></span>
+                            <span class="flag-stripe white"><i class="fa-solid fa-dharmachakra"></i></span>
+                            <span class="flag-stripe green"></span>
+                        </div>
+                        <span class="brand-name">Scheme<span>Sathi</span></span>
+                    </div>
+                    <p class="footer-text">
+                        A public awareness & educational portal dedicated to bridging the digital information gap 
+                        for Indian welfare schemes, empowering citizens with transparent, verified details.
+                    </p>
+                    <div class="footer-badges">
+                        <span class="trust-badge"><i class="fa-solid fa-shield-halved"></i> 100% Free Information</span>
+                        <span class="trust-badge"><i class="fa-solid fa-check-double"></i> Verified Official Sources</span>
+                    </div>
+                </div>
+
+                <!-- Quick Navigation -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#eligibility-checker">Eligibility Quiz</a></li>
+                        <li><a href="#schemes">All Schemes Directory</a></li>
+                        <li><a href="#awareness">Safe Apply Guide</a></li>
+                        <li><a href="#doc-checklist">Document Checklist</a></li>
+                        <li><a href="#faqs">Frequently Asked Questions</a></li>
+                    </ul>
+                </div>
+
+                <!-- Scheme Categories -->
+                <div class="footer-col">
+                    <h4>Popular Categories</h4>
+                    <ul class="footer-links">
+                        <li><a href="#schemes" data-footer-category="Farmers">Agriculture & Farmers</a></li>
+                        <li><a href="#schemes" data-footer-category="Students">Education & Scholarships</a></li>
+                        <li><a href="#schemes" data-footer-category="Women">Women & Girl Child</a></li>
+                        <li><a href="#schemes" data-footer-category="Health">Health & Ayushman Bharat</a></li>
+                        <li><a href="#schemes" data-footer-category="Business">MSME & Mudra Loans</a></li>
+                        <li><a href="#schemes" data-footer-category="Social">Social Security & Housing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Official Govt Portals -->
+                <div class="footer-col">
+                    <h4>Government Gateways</h4>
+                    <ul class="footer-links">
+                        <li><a href="https://www.india.gov.in" target="_blank" rel="noopener noreferrer">National Portal of India <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i></a></li>
+                        <li><a href="https://www.myscheme.gov.in" target="_blank" rel="noopener noreferrer">myScheme Portal <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i></a></li>
+                        <li><a href="https://www.digilocker.gov.in" target="_blank" rel="noopener noreferrer">DigiLocker Service <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i></a></li>
+                        <li><a href="https://cybercrime.gov.in" target="_blank" rel="noopener noreferrer">National Cyber Crime Portal <i class="fa-solid fa-arrow-up-right-from-square external-icon"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Disclaimer Notice -->
+            <div class="footer-disclaimer">
+                <p>
+                    <strong>Educational Project Disclaimer:</strong> SchemeSathi is an independent educational portal designed to spread digital literacy and scheme awareness. We do NOT collect application fees, sensitive biometric credentials, or process official scheme applications. All users are strongly advised to verify details and apply exclusively through official Indian government websites ending with <code>.gov.in</code>.
+                </p>
+            </div>
+
+            <!-- Copyright Bar -->
+            <div class="footer-bottom">
+                <p>&copy; 2026 SchemeSathi. Built with ❤️ for Digital India & Citizen Empowerment.</p>
+                <div class="footer-bottom-links">
+                    <span>Designed for Public Awareness</span>
+                    <span>•</span>
+                    <span>Direct Benefit Transfer (DBT) Ready</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
